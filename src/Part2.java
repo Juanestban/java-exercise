@@ -1,8 +1,6 @@
 import java.nio.charset.Charset;
 import java.util.Scanner;
 
-import javax.print.attribute.standard.MediaSize.ISO;
-
 public class Part2 {
     public Scanner scanner = new Scanner(System.in);
     private static final Charset UTF_8 = Charset.forName("UTF-8");
@@ -235,6 +233,45 @@ public class Part2 {
 
     // question 19
     public void question19() {
+        int price = 0, cantLlantas = 0;
+
+        System.out.println("Digitar la cantidad de llantas");
+        cantLlantas = Integer.parseInt(scanner.nextLine());
+
+        price = cantLlantas < 5 ? 30000 : cantLlantas < 10 ? 25000 : 20000;
+
+        System.out.println("Cantidad de llantas: " + cantLlantas + "\nPrecio por llanta individual:" + price
+                + "\nTotal a pagar: " + (cantLlantas * price));
+    }
+
+    // question 20
+    public void question20() {
+        int age = 0, sex = 0, type = 0, nationality = 0;
+        String questionNationality = decodeUTF_8("1: Latino | 2: Alemán | 3: Hindú | 4: Colombiano");
+        String questionType = "1: Alto | 2: Bajo | 3: Mediano";
+        String questionSex = "1: Hombre | 2: Mujer";
+        float value = 0;
+
         //
+        System.out.println("Digitar su Edad:");
+        age = Integer.parseInt(scanner.nextLine());
+
+        System.out.println("Digitar su Sexo: ==> " + questionSex);
+        sex = Integer.parseInt(scanner.nextLine());
+
+        System.out.println("Digitar su Tipo: ==> " + questionType);
+        type = Integer.parseInt(scanner.nextLine());
+
+        System.out.println("Digitar su Nacionalidad: ==> " + questionNationality);
+        nationality = Integer.parseInt(scanner.nextLine());
+
+        System.out.println("Su valor:");
+        value = Float.parseFloat(scanner.nextLine());
+
+        value = sex == 2 && type == 1 && age >= 35 || age <= 45 ? value * 3
+                : sex == 1 && nationality == 1 && type == 3 && age < 30 ? value / 3
+                        : sex == 2 && nationality == 3 && age > 55 ? value - 50000 : value;
+
+        System.out.println("El valor resultante de la persona fue:\n" + value);
     }
 }
