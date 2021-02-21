@@ -43,7 +43,7 @@ public class Part1 {
         int num1 = 0, num2 = 0, count = 0;
 
         do {
-            System.out.println("digitar el primer valor:");
+            System.out.println("digitar el valor:");
             value = scanner.nextLine();
 
             if (count == 0)
@@ -62,7 +62,7 @@ public class Part1 {
         String value = "";
         int POSITIVO, valNumeric;
 
-        System.out.println("digitar primer dato numerico");
+        System.out.println("digitar dato numerico");
         value = scanner.nextLine();
         valNumeric = Integer.parseInt(value);
 
@@ -126,5 +126,164 @@ public class Part1 {
 
         System.out
                 .println(concat + "\nPor un total de: " + number + "\nEl descuento que se agrego fue del " + discount);
+    }
+
+    // question 6
+    public void question6() {
+        String val = "";
+        int quantity = 0, price = 80000, totalPrice = 0;
+
+        System.out.println("digitar la cantidad de llantas a comprar");
+        val = scanner.nextLine();
+        quantity = Integer.parseInt(val);
+
+        if (quantity < 5) {
+            totalPrice = quantity * price;
+        }
+
+        if (quantity >= 5) {
+            price = 70000;
+            totalPrice = quantity * price;
+        }
+
+        System.out.println(
+                "Presio por llanta individual: " + price + "\nEl presio total de la compra es de: " + totalPrice);
+    }
+
+    // question 7
+    public void question7() {
+        int number1 = 0, number2 = 0, count = 1, result = 0;
+        String val = "";
+
+        do {
+            System.out.println("Digitar el dato numerico");
+            val = scanner.nextLine();
+
+            if (count == 1) {
+                number1 = Integer.parseInt(val);
+            } else {
+                number2 = Integer.parseInt(val);
+
+                if (number1 == number2)
+                    result = number1 * number2;
+                else if (number1 > number2)
+                    result = number1 - number2;
+                else
+                    result = number1 + number2;
+            }
+            count++;
+        } while (count <= 2);
+
+        System.out.println("resultado: " + result);
+    }
+
+    public void question8() {
+        int count = 0, number1 = 0, number2 = 0, number3 = 0;
+        String val = "";
+
+        do {
+            System.out.println("Digitar numero" + (count + 1));
+            val = scanner.nextLine();
+
+            if (count == 0)
+                number1 = Integer.parseInt(val);
+            else if (count == 1)
+                number2 = Integer.parseInt(val);
+            else {
+                number3 = Integer.parseInt(val);
+
+                if (number1 > number2 && number1 > number3)
+                    System.out.println("El numero mayor es:" + number1);
+                else if (number2 > number1 && number2 > number3)
+                    System.out.println("El numero mayor es:" + number2);
+                else if (number3 > number1 && number3 > number2)
+                    System.out.println("El numero mayor es:" + number3);
+                else
+                    System.out.println("no existe numbero mayor [todos son pares]:" + "\n" + number1 + " === " + number2
+                            + " === " + number3);
+            }
+            count++;
+        } while (count < 3);
+    }
+
+    // question 9
+    public void question9() {
+        String name = "";
+        String stateCivil[];
+        String concat = "Digitar Tu Estados Civiles:\n";
+        // sex: 1 === MALE | 2 === FEMALE
+        int age = 0, sex = 0;
+        stateCivil = new String[6];
+        stateCivil[0] = "Soltero/a";
+        stateCivil[1] = "Casado/a";
+        stateCivil[2] = "Union libre o union de hecho";
+        stateCivil[3] = "Separado/a";
+        stateCivil[4] = "Divorciado/a";
+        stateCivil[5] = "Viudo/a";
+        int stateCivilResult = 0;
+
+        // name
+        System.out.println("Digita tu nombre completo:");
+        name = scanner.nextLine();
+        // age
+        System.out.println("Digita tu edad:");
+        age = Integer.parseInt(scanner.nextLine());
+        // sex
+        System.out.println("digitar tu sexo: => MALE: 1 | FEMALE: 2");
+        sex = Integer.parseInt(scanner.nextLine());
+        String resultSex = sex == 1 ? "Masculino" : "Femenino";
+
+        for (int i = 0; i < stateCivil.length; i++) {
+            concat += stateCivil[i] + ": " + i + " | ";
+        }
+
+        System.out.println(concat);
+        stateCivilResult = Integer.parseInt(scanner.nextLine());
+        if (stateCivilResult == 0 && age >= 18) {
+            System.out.println("nombre: " + name + "\nEdad: " + age + "\nSexo: " + resultSex + "\nEstado Civil: "
+                    + stateCivil[stateCivilResult]);
+        } else
+            System.out.println("No cumples con los requisitos para mostrar los datos");
+    }
+
+    // question 10
+    public void question10() {
+        String name = "";
+        String stateCivil[];
+        String concat = "Digitar Tu Estados Civiles:\n";
+        // sex: 1 === MALE | 2 === FEMALE
+        int age = 0, sex = 0;
+        stateCivil = new String[6];
+        stateCivil[0] = "Soltero/a";
+        stateCivil[1] = "Casado/a";
+        stateCivil[2] = "Union libre o union de hecho";
+        stateCivil[3] = "Separado/a";
+        stateCivil[4] = "Divorciado/a";
+        stateCivil[5] = "Viudo/a";
+        int stateCivilResult = 0;
+
+        // name
+        System.out.println("Digita tu nombre completo:");
+        name = scanner.nextLine();
+        // age
+        System.out.println("Digita tu edad:");
+        age = Integer.parseInt(scanner.nextLine());
+        // sex
+        System.out.println("digitar tu sexo: => MALE: 1 | FEMALE: 2");
+        sex = Integer.parseInt(scanner.nextLine());
+        // String resultSex = sex == 1 ? "Masculino" : "Femenino";
+
+        for (int i = 0; i < stateCivil.length; i++) {
+            concat += stateCivil[i] + ": " + i + " | ";
+        }
+
+        System.out.println(concat);
+        stateCivilResult = Integer.parseInt(scanner.nextLine());
+        if (sex == 2 && age >= 18 && stateCivilResult == 1) {
+            System.out.println("nombre: " + name + "\nEdad: " + age);
+        } else if (sex == 1 && stateCivilResult == 0)
+            System.out.println("nombre: " + name);
+        else
+            System.out.println("No cumples con los requisitos para mostrar los datos");
     }
 }
