@@ -65,5 +65,35 @@ public class App extends Part1 {
 
         // question 20
         // questionPart2.question20();
+
+        // question 21
+        // questionP3.question21();
+
+        // question 22
+        // questionP3.question22();
+
+        // question 23
+        // questionP3.question23();
+
+        // question 24
+        // questionP3.question24();
+
+        // question 25
+        // questionP3.question25();
+
+        // question 26
+        // questionP3.question26();
+
+        // question 27
+        // questionP3.question27();
+
+        // question 28
+        // questionP3.question28();
+
+        // question 29
+        // questionP3.question29();
+
+        // question 30
+        questionP3.question30();
     }
 }
