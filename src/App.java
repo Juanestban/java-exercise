@@ -5,6 +5,7 @@ public class App extends Part1 {
         Part1 question = new Part1();
         Part2 questionPart2 = new Part2();
         Part3 questionP3 = new Part3();
+        Part4 question4 = new Part4();
 
         // question 1:
         // question.question1();
@@ -94,6 +95,21 @@ public class App extends Part1 {
         // questionP3.question29();
 
         // question 30
-        questionP3.question30();
+        // questionP3.question30();
+
+        // question 31
+        // question4.question31();
+
+        // question 32
+        // question4.question32();
+
+        // question 33
+        // question4.question33();
+
+        // question 34
+        // question4.question34();
+
+        // question 35
+        question4.question35();
     }
 }

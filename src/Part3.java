@@ -167,19 +167,28 @@ public class Part3 {
     }
 
     // question 30
-    // FALTA POR TERMINAR
     public void question30() {
         int presioPorUniddad = 0;
         float cantidad = 0;
+        boolean start = true;
+        String option = "";
         String question2 = encodeText(
                 "Digitar la cantidad de cada uno de aquellos elementos a consumir en la fabricación");
 
-        System.out.println("Digitar el presio por cada unidad de cada uno:");
-        presioPorUniddad = Integer.parseInt(scanner.nextLine());
+        do {
+            System.out.println("Digitar el presio por cada unidad de cada uno:");
+            presioPorUniddad += Integer.parseInt(scanner.nextLine());
 
-        System.out.println(question2);
-        cantidad = Float.parseFloat(scanner.nextLine());
+            System.out.println("deseas seguir? => Si: s | No: n");
+            option = scanner.nextLine();
 
-        //
+            System.out.println(question2);
+            cantidad += Float.parseFloat(scanner.nextLine());
+
+            start = option.toLowerCase() == "s" ? false : true;
+        } while (start);
+
+        presioPorUniddad *= cantidad * .2f;
+        System.out.println("result:" + presioPorUniddad);
     }
 }
